@@ -1,5 +1,6 @@
 package com.example.CRUD.Operation.Controller;
 
+import com.example.CRUD.Operation.Entity.Marks;
 import com.example.CRUD.Operation.Entity.Student;
 import com.example.CRUD.Operation.Service.StudentService;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,12 @@ public class StudentController {
         return ResponseEntity.ok(st);
     }
 
+    @PostMapping("/marks")
+    public ResponseEntity<Marks> AddMarks(@RequestBody Marks marks){
+        Marks m = studentService.markss(marks);
+        return ResponseEntity.ok(m);
+    }
+
     @PutMapping("/update/{id}")
     public ResponseEntity<Student> updateStudent(@RequestBody Student student){
         Student stu = studentService.UpdateStudent(student);
@@ -39,5 +46,7 @@ public class StudentController {
         return ResponseEntity.ok().build();
 
     }
+
+
 
 }

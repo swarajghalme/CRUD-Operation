@@ -1,5 +1,6 @@
 package com.example.CRUD.Operation.Service;
 
+import com.example.CRUD.Operation.Entity.Marks;
 import com.example.CRUD.Operation.Entity.Student;
 import com.example.CRUD.Operation.Repository.StudentRepo;
 import lombok.RequiredArgsConstructor;
@@ -7,12 +8,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class StudentService {
+public class  StudentService {
+
 
     private final StudentRepo studentRepo;
     public Student AddStudentinfo(Student student){
        return  studentRepo.save(student);
 
+    }
+    public Marks markss(Marks marks){
+        return marks;
     }
 
     public Student UpdateStudent(Student student){
